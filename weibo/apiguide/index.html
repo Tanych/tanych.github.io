@@ -1,0 +1,488 @@
+<!doctype html>
+<!--[if lte IE 7 ]>
+<html class="no-js ie lte7 lte8 lte9 getting-started">
+<![endif]--><!--[if IE 8 ]>
+<html class="no-js ie ie8 lte8 lte9 getting-started">
+<![endif]--><!--[if IE 9 ]>
+<html class="no-js ie ie9 lte9 getting-started">
+<![endif]--><!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js getting-started">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Guide for Weibo API</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css?v=i88dzwkx">
+    <link rel="stylesheet" href="../assets/css/amaze.min.css?v=i88dzwkx">
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../assets/js/jquery.min.js">
+
+    </script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="../assets/js/polyfill/rem.min.js"></script>
+    <script src="../assets/js/polyfill/respond.min.js"></script>
+    <script src="../assets/js/amazeui.legacy.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../assets/js/amazeui.min.js?v=i88dzwkx"></script>
+    <!--<![endif]-->
+    <link rel="canonical" href="http://amazeui.org/getting-started/html-css?_ver=2.x"/>
+    <style>
+      .my-footer {
+      color: #7f8c8d;
+      margin: 0;
+      padding: 15px 0;
+      text-align: center;
+      background: #2d3e50;
+    }
+	.container
+	{
+		border: 1px solid #00f; padding: 20px 10px
+	}
+	.containerred
+	{
+		border: 1px solid #dd514c; padding: 20px 10px
+	}
+	
+    </style>
+</head>
+<body class="" data-amui="2.x">
+    <!--[if lte IE 9 ]>
+    <div class="am-alert am-alert-danger ie-warning" data-am-alert>
+    <button type="button" class="am-close">&times;</button>
+    <div class="am-container">
+        Your browser seems out of date!
+    <a href="http://browsehappy.com/" target="_blank">Update your browser!</a>！
+    </div>
+    </div>
+    <![endif]-->
+<header id="amz-header">
+    <div class="amz-container am-cf">
+        <h1 style="height: 55px;width: 100px; background:url(../images/gwlogo.png)"></h1>
+		<button class="am-btn am-btn-primary am-show-sm-only" data-am-collapse="{target: &#39;.amz-header-nav&#39;}">
+          <span class="am-sr-only">Menu</span>
+		  <span class="am-icon-bars"></span>
+        </button>
+		
+        <nav>
+            <ul class="amz-header-nav am-collapse">
+				<li>
+				  <a href="http://open.weibo.com/wiki/API">Weibo API</a>
+				</li>
+				<li>
+				  <a href="http://open.weibo.com/">Weibo Platform</a>
+				</li>
+				<li>
+				  <a href="http://library.gwu.edu/">GW Libraries</a>
+				</li>
+				<li>
+				  <a href="http://amazeui.org/?_ver=2.x">AmazeUI</a>
+				</li>
+                <li class="amz-cse">
+                    <form action="https://www.google.com/search" method="get" target="_blank" class="cse-form">
+                    <input type="hidden" name="s" value="">
+                    <input type="hidden" name="sitesearch" value="">
+                        <input type="text" required name="q" placeholder="search" autocomplete="off">
+                    <button><span class="am-icon-search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <div class="amz-banner">
+        <div class="amz-container" data-am-scrollspy="{animation: 'scale-up', repeat: false}">
+            <h1 class="am-text-center">Guide for Using Weibo API</h1>
+             <p class="am-article-meta am-text-center am-text-lg"><strong>Yecheng Tan </strong><a href="https://github.com/Tanych/"><span class="am-icon-github-square"></span></a></p>
+             <ul class="am-avg-sm-1">
+                <li class="am-text-center">
+				<a href="http://weibo.com/" target="_blank" >
+				<img  src="http://img.t.sinajs.cn/t5/style/images/register/logo_big.png?id=1395992824012" alt="Sina Weibo" height="52" width="190"/></a>
+				</li>
+				
+            </ul>
+             <p>
+            This is a smooth guide for programmers and researchers who intend to use Weibo's API. Since the current official documents haven't updated for a long time,
+            I am writing this guide to support the <a href="social-feed-manager.readthedocs.org">Social Feed Manager</a> project. Also,I want to share what we know to the new users.
+            </p>
+            <blockquote class="am-text-lg">I highly recommend you to ask someone with Chinese background if you feel stuck.</blockquote>
+        </div>
+    </div>
+    <section class="" id="amz-main" data-tag="html-css">
+        <div class="am-g am-g-fixed">
+            <div class="col-lg-12 am-u-lg-12 doc-content">
+                <div class="doc-toc">
+                    <h2><span>TOC</span></h2>
+                    <div class="doc-toc-bd">
+                        <ul class="md-toc">
+                            <li><a href="#sign_up_weibo">Sign up a Weibo account</a>
+                                <ul class="am-collapse">
+                                 <li><a href="#access_weibo">Access to Weibo.com</a></li>
+                                 <li><a href="#sign_up_free">Sign up for Free</a></li>
+                                 <li><a href="#update_info">Update Information</a></li>
+                                 <li><a href="#interests">Select Interests</a></li>
+								 <li><a href="#weibo_world">Weibo World</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#set_up_app">Set up a Web Application</a>
+                                <ul class="am-collapse">
+                                    <li><a href="#access_weibo_app">Access to open.weibo.com</a></li>
+                                    <li><a href="#fill_in_basic">Fill the Basic Information</a></li>
+                                    <li><a href="#confirm_info">Make a Confirmation</a></li>
+                                    <li><a href="#create_app ">Create a Web Application</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#get_access_token">Get Access Token</a>
+                                <ul class="am-collapse">
+                                    <li><a href="#auth_code">Get an Authentication Code</a></li>
+                                    <li><a href="#access_token_done">Obtain the Access Token</a></li> 
+                                </ul>
+                            </li>
+							<li>
+							<a href="#api_demo">API Examples</a>
+                               
+                            </li>
+							<li>
+							<a href="#reference ">Reference</a>
+
+                            </li>
+							
+                        </ul>
+                    </div>
+                </div>
+                <h1 id="weibo_api_guide">Weibo API Guide<a href="#" title="Heading anchor" class="doc-anchor"></a></h1>
+                <hr/>
+				 
+				 <!--Section 1-->
+				  
+                <h2 id="sign_up_weibo">Sign up a Weibo Account <a href="#" title="Heading anchor" class="doc-anchor"></a></h2>
+				<p>The goal of this section is to get a <strong class="am-text-danger">username</strong> and <strong class="am-text-danger">password</strong> 
+				of weibo account.If you already have, please go to next <a href="#set_up_app">Section</a>.</p>
+                <h3 id="access_weibo">Access to <a href="http://www.weibo.com">weibo.com</a></h3>
+                <p>At the US areas, the weibo.com will be redirected to the the us.weibo.com. The page is as follows:</p>
+                 <img class="am-radius am-img-thumbnail" src="../images/weibo_index.png" width="100%"/>
+				<h3 id="sign_up_free">Sign up for Free</h3>
+				<p>Click the <strong class="am-text-secondary">开通微博(Open an Account)</strong> button on the top-right menu, and the page could be like this:</p>
+				 <img class="am-radius am-img-thumbnail" src="../images/weibo_signup.png" width="100%"/>
+				 <p>It has two ways to fill the form: <strong class="am-text-secondary">Use Email</strong> or 
+				 <strong class="am-text-secondary">Use Mobile Phone </strong>, but both of them need your phone to verfy the information.
+				 This guide will follow the Mobile Phone way. After filling all the fields, click the orange button and go to the next step.
+				 </p>
+				 <h3 id="update_info">Update Information</h3>
+				  <p>In this step, you need to provide your <strong>basic information</strong>. 
+				  For the gender,<strong class="am-text-warning">男</strong> (on the left) means male and 
+				  <strong class="am-text-warning">女</strong> (on the right) means female.
+				  </p>
+				  <img class="am-radius am-img-thumbnail" src="../images/update_info.png" width="100%"/>
+				  <p>
+				  Click the orange button to continue.
+				  </p>
+				  <h3 id="interests">Select Interests</h3>
+				  <p>
+				  Choose at least one of the interests on the pages,click the orange <strong class="am-text-warning">Enter</strong> button.
+				  </p>
+				  <img class="am-radius am-img-thumbnail" src="../images/interets.png" width="100%"/>
+				  <h3 id="weibo_world">Weibo World</h3>
+				  <p>
+				  If all the steps above go well, you will now enter the weibo world.
+				  </p>
+				  <img class="am-radius am-img-thumbnail" src="../images/weibo_world.png" width="100%"/>
+				  <blockquote class="am-text-lg">
+				  NOTE: If you want to log in next time, just go to <a href="http://www.weibo.com">weibo.com</a>, 
+				  click the <strong class="am-text-success">登录微博(Sign in)</strong> button and sign in with your phone number.
+				  </blockquote>
+				  <hr/>
+				  
+				  <!--Section 2-->
+				  <h2 id="set_up_app">Set up a Web Application<a href="#" title="Heading anchor" class="doc-anchor"></a></h2>
+				  <p>The goal of this section is to obtain the following three items:</p>
+					<ul>
+						<li><strong class="am-text-danger">App Key</strong></li>
+						<li><strong class="am-text-danger">App Secret</strong></li>
+						<li><strong class="am-text-danger">Redirect URI</strong></li>        
+					</ul>
+				<p>If you already have all of them, please go to next <a href="#get_access_token">Section</a>.</p></p>
+				  <h3 id="access_weibo_app">Access to <a href="http://open.weibo.com">open.weibo.com</a></h3>
+				  <p>Assume you have nothing wrong with the networking,you could see the page as follow:</p>
+				  <img class="am-radius am-img-thumbnail" src="../images/weibo_app.png" width="100%"/>
+				  <p>
+				  click the <strong>登录(Login)</strong> button on the top-right and sign in with your phone number
+				  (add <strong class="am-text-danger">001</strong> before your number if not works) and password.
+				  </p>
+				  <h3 id="fill_in_basic">Fill in Basic Information</h3>
+				  <p>If you successful login, click the Avatar on the top-right of the screen, and then click the 
+				  <strong>编辑开发者信息(Update Information)</strong> which is the first option in the menu that pops.
+				  </p>
+				  <img class="am-radius am-img-thumbnail" src="../images/basic_info.png" width="100%"/>
+				  <p>And then, you will go the the basic information pages,it could be like this:</p>
+				  <img class="am-radius am-img-thumbnail" src="../images/fill_in_basic.png" width="100%"/>
+				  <blockquote class="am-text-lg">
+				  NOTE: You can use your browser like Chrome to translate all the fields to your own comfortable language.
+				  </blockquote>
+				  <P>Some of fields are translated to English:</P>
+				  <ul>
+						<li>开发这类型: Type of account, and '个人' means personal, '公司' means company)</li>
+						<li>开发者名称: Developer's name</li>
+						<li>所在地区: Your location, if you are not in China, just choose 海外(Overseas) and 美国(U.S.)</li>   
+						<li>紧急联系人姓名: Emergency contact name</li>		
+						<li>紧急联系人电话: Emergency Contact Phone</li>		
+					</ul>
+				 <p>For the <strong>Emergency contact name</strong> and <strong>Emergency contact phone</strong>, 
+				 you can simply fill in your own information. After all the fields are finished correctly which will mark on the right of the fields.
+				 Click the blue <strong class="am-text-primary">确认(OK)</strong> button and 
+				 you will see a confirmation message with a request to send confirmation email. 
+				 then click the blue <strong class="am-text-primary">确认(OK)</strong> button.
+				 </p>
+				 <img class="am-radius am-img-thumbnail" src="../images/confirm_email.png" width="100%"/>
+				 <p>On the next page, it will notice whether the confirm email has been sent successful.After five seconds, 
+				 you will be redirected to the home page. Now, you need log in to your email account to confirm the information.</p>
+				 <h3 id="confirm_info">Make a Confirmation</h3>
+				 <p>Log in your email account and check the email sending from <strong>weibo_app@vip.sina.com</strong>, the email could like this:</p>
+				 <img class="am-radius am-img-thumbnail" src="../images/confirm_link.png" width="100%"/>
+				 <h3 id="create_app">Create a web application</h3>
+				 <p>If all the above go smoothly, then click the <strong>微连接(Microjoining)</strong> on the menu bar, 
+					</p>
+				 <img class="am-radius am-img-thumbnail" src="../images/menu_app.png" width="100%"/>
+				  <p>Next, you could see a page with types of applications. What most people would choose <strong>网页应用(Web Application)</strong>.</p>
+				 <img class="am-radius am-img-thumbnail" src="../images/app_type.png" width="100%"/>
+				 <p>You will need to provide the <strong>应用名称(Application Name)</strong> which must be unique in the next page.
+				 When you done,click the <strong>创建(Create)</strong> button.</p>
+				 <img class="am-radius am-img-thumbnail" src="../images/app_create.png" width="100%"/>
+				 <p>If successful, you will be redirected to the application manager page.
+				 Now, the <strong class="am-text-danger">App Key</strong> and <strong class="am-text-danger">App Secret</strong> will show on this page.
+				 To set a <strong class="am-text-danger">Redirect URI</strong>, just click the <strong>高级信息(Advanced Information)</strong> 
+				 in the submenu.</p>
+				 <img class="am-radius am-img-thumbnail" src="../images/app_done.png" width="100%"/>
+				 <p>Then, locate a bar starting with the words <strong>OAuth2.0 接权设置(OAuth2.0 Authorization Setting)</strong>, and click the button <strong>编辑(Edit) </strong>on the right side of the bar.</p>
+				  <img class="am-radius am-img-thumbnail" src="../images/uri_set_1.png" width="100%"/>
+				  <p>
+				  Finally, you should fill the two empty fields with any valid URL address. In most cases, it does not matter what you choose. 
+				  Click the green <strong class="am-text-success">提交(Submit)</strong> button when you done.
+				  </p>
+				  <img class="am-radius am-img-thumbnail" src="../images/uri_set_2.png" width="100%"/>
+				 <P>Congratulation, you have finished this section.Now you become a Weibo API programmer since you have the  
+				 <strong class="am-text-danger">App Key</strong>, 
+				 <strong class="am-text-danger">App Secret</strong> and 
+				 <strong class="am-text-danger">Redirect URI</strong>.
+				 </p>
+				 <hr/>
+				 
+				 <!--Section 3-->
+				 <h2 id="get_access_token">Get Access Token<a href="#" title="Heading anchor" class="doc-anchor"></a></h2>
+				 <p>In this section, we need to get an <strong>Access Token</strong> to use most basic API.
+				 The Weibo API is kind of REST web services. For the details of using API,please refer to the 
+				 <a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI" class="external-link" target="_blank">Weibo API	Documents</a>.
+				 There are two steps for the Access Token process, for more details about OAuth2, please go to the 
+				 <a href="http://open.weibo.com/wiki/OAuth/en" class="external-link" target="_blank">OAuth2 Documents</a>. 
+				 </p>
+				 
+				 <h3 id="auth_code">Get an Authentication Code</h3>
+				 <p>To obtain an authentication code, we could use the 
+				 <a href="http://open.weibo.com/wiki/Oauth2/authorize" class="external-link" target="_blank">Authorization Service</a>.
+				 For your convenience, just fill the form below.
+				 </p>
+				 <div class="container">
+					 <form class="am-form am-form-horizontal" action="https://api.weibo.com/oauth2/authorize" method="get" target="_blank">
+					<div class="am-form-group">
+						<label for="client_id" class="am-u-sm-2 am-form-label">App Key</label>
+							<div class="am-u-sm-10">
+							<input type="text" id="client_id"  name="client_id" value="">
+							</div>
+						</div>
+					<br>
+					<div class="am-form-group">
+					<label for="redirect_uri" class="am-u-sm-2 am-form-label">Redirect URL</label>
+					<div class="am-u-sm-10">
+						<input type="text" id="redirect_uri" name="redirect_uri" value="">
+					</div>
+					</div>
+					<br>
+
+					<div class="am-form-group">
+						<label for="restype" class="am-u-sm-2 am-form-label">Response type</label>
+						<div class="am-u-sm-10">
+							<input type="text" id="restype" name="restype" value="code">
+						</div>
+						</div>
+					<br>
+					<div class="am-form-group">
+						<div class="am-u-sm-10 am-u-sm-offset-2">
+							<button type="submit" class="am-btn am-btn-primary" value="Submit">Sumbit</button>
+						</div>
+					</div>
+					</form>
+				</div>
+				
+				<p>After correctly fill in the information, a new page would be like this:</p>
+				<img class="am-radius am-img-thumbnail" src="../images/authorize_btn.png" width="100%"/>
+				<p>Click the red <strong class="am-text-danger">授权(Authorize)</strong> button,and you will be redirected to the URL you have set.
+				Copy the code in the URL to go to next step.</p>
+				<img class="am-radius am-img-thumbnail" src="../images/authorize_code.png" width="100%"/>
+				
+				<h3 id="access_token_done">Obtain the Access Token</h3>
+				 <p>To complete the final step, we could use the 
+				  <a href="http://open.weibo.com/wiki/OAuth2/access_token" class="external-link" target="_blank">Access Token Service</a>.
+				 For your convenience, just fill the form below.
+				 </p>
+				 
+				<div class="containerred">
+
+				   <form class="am-form am-form-horizontal" action=" https://api.weibo.com/oauth2/access_token " method="post" target="_blank">
+					<div class="am-form-group">
+					<label for="client_id" class="am-u-sm-2 am-form-label">App Key</label>
+						<div class="am-u-sm-10">
+						<input type="text" id="client_id"  name="appkey" value="">
+						</div>
+					</div>
+					<br>
+
+					<div class="am-form-group">
+						<label for="client_secret" class="am-u-sm-2 am-form-label">App Secret</label>
+						<div class="am-u-sm-10">
+							<input type="text" id="client_secret" name="appsecret" value="">
+						</div>
+						</div>
+					<br>
+					
+					<div class="am-form-group">
+						<label for="redirect_uri" class="am-u-sm-2 am-form-label">Redirect URL</label>
+						<div class="am-u-sm-10">
+							<input type="text" id="redirect_uri" name="reduri" value="">
+						</div>
+						</div>
+					<br>
+
+					<div class="am-form-group">
+						<label for="grant_type" class="am-u-sm-2 am-form-label">Grant Type</label>
+						<div class="am-u-sm-10">
+							<input type="text" id="grant_type" name="granttype" value="authorization_code">
+						</div>
+						</div>
+					<br>
+					
+					<div class="am-form-group">
+					<label for="code" class="am-u-sm-2 am-form-label">Authentication Code</label>
+						<div class="am-u-sm-10">
+						<input type="text" id="code"  name="code" value="">
+						</div>
+					</div>
+					<br>
+					
+
+					<div class="am-form-group">
+						<div class="am-u-sm-10 am-u-sm-offset-2">
+							<button type="submit" class="am-btn am-btn-warning" value="Submit">Sumbit</button>
+						</div>
+						</div>
+					</form>
+			  </div>
+			  <p>After correctly fill in the information, the service will return a JSON formate message in a new page.</p>
+			  <code>{"access_token":"2.00biaj5GctqIhB2da047b0c47yeUcB","remind_in":"157679999","expires_in":157679999,"uid":"5862294965"}</code>
+			  <p>The Access Token above coule be <strong>2.00biaj5GctqIhB2da047b0c47yeUcB</strong>, it can last for a long time.</p>
+			  <p>Congratz! you have completed this section. If you are interested in the API demo, please follow the next section. </p>
+			 <blockquote class="am-text-lg">
+				  NOTE: If you get some unexpected errors, please get a new <strong>Authentication Code</strong>. Try again!
+			</blockquote>
+			
+			<hr/>
+			
+			<!--Section 4-->
+			<h2 id="api_demo">API Examples<a href="#" title="Heading anchor" class="doc-anchor"></a></h2>
+			<p>In this section, I wish you can understand the following examples.</p>
+			<p>
+			<a href="http://open.weibo.com/wiki/2/statuses/public_timeline"class="external-link" target="_blank">Public Timeline</a>:
+			Return the latest public weibos. 
+			</p> 
+			
+			<div class="container">
+			   <form class="am-form am-form-horizontal" action="https://api.weibo.com/2/statuses/public_timeline.json" method="get" target="_blank">
+				<div class="am-form-group">
+				<label for="client_id" class="am-u-sm-2 am-form-label">App Key</label>
+					<div class="am-u-sm-10">
+					<input type="text" id="client_id"  name="client_id" value="">
+					</div>
+				</div>
+				<br>
+
+				<div class="am-form-group">
+					<label for="access_token" class="am-u-sm-2 am-form-label">Access Token</label>
+					<div class="am-u-sm-10">
+						<input type="text" id="access_token" name="access_token" value="">
+					</div>
+					</div>
+				<br>
+
+				<div class="am-form-group">
+					<label for="page" class="am-u-sm-2 am-form-label">Page</label>
+					<div class="am-u-sm-10">
+						<input type="text" id="page" name="page" value="1">
+					</div>
+					</div>
+				<br>
+
+				<div class="am-form-group">
+					<div class="am-u-sm-10 am-u-sm-offset-2">
+						<button type="submit" class="am-btn am-btn-primary" value="Submit">Sumbit</button>
+					</div>
+					</div>
+				</form>
+			</div>
+			<hr/>
+			<P>Congratz! You have completed ALL of the guide. I hope it would be helpful! If you have any questions,
+			please feel free to contact with <a href="http://library.gwu.edu/users/ychtan">Yecheng Tan</a>.</P>
+			<hr/>
+			<h2 id="reference">Reference <a href="#can-kao-lian-jie" title="Heading anchor" class="doc-anchor"></a></h2>
+			
+			<ul>
+			<li><a href="https://www.cs.cmu.edu/~lingwang/weiboguide/">Practical Guide for using Sina Weibo's API</a></li>
+			<li><a href="http://amazeui.org/css/">AmazeUI CSS</a></li>
+			</ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="my-footer">
+       <p>© Copyright 2016 <a href="http://library.gwu.edu/" target="_blank">The George Washington University Libraries</a>.
+            Powered by <a herf="http://amazeui.org/">Amaze UI</a></p>
+    </footer>
+
+    <div class="amz-toolbar" id="amz-toolbar">
+        <a href="#top" title="go top" class="am-icon-btn am-icon-arrow-up" id="amz-go-top"></a>
+    </div>
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../assets/js/ZeroClipboard.min.js"></script>
+    <!--<![endif]-->
+    <script src="../assets/js/handlebars.min.js"></script>
+    <script src="../assets/js/main.min.js"></script>
+    <script>
+        var _hmt=_hmt||[];!function(){
+            var e=document.createElement("script");
+            e.src="//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb",
+                    (document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}(),
+                function(e,t,n){
+                    function a(){!function(e,t,n,a,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},
+                            e[c].l=1*new Date,o=t.createElement(n),
+                            s=t.getElementsByTagName(n)[0],o.async=1,o.src=a,
+                            s.parentNode.insertBefore(o,s)}(e,t,n,"//www.google-analytics.com/analytics.js","ga"),
+                            ga("create","UA-34196034-8","amazeui.org"),
+                            ga("send","pageview")}
+                    e.addEventListener?e.addEventListener("load",a,!1):e.attachEvent&&e.attachEvent("onload",a)}(window,document,"script");
+        var _py=_py||[];_py.push(["a","9J..PngLvKZedYDSyrmcEuUyqX"]),
+                _py.push(["domain","stats.ipinyou.com"]),
+                _py.push(["e",""]),
+                -function(e){var t=e.createElement("script"),
+                        n=e.body.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n),f="https:"==location.protocol,
+                        t.src=(f?"https":"http")+"://"+(f?"fm.ipinyou.com":"fm.p0y.cn")+"/j/adv.js"}(document);
+    </script>
+
+</body>
+</html>
+<!-- Cached page generated on Wed Apr 08 2015 15:00:52 GMT+0800 (CST) -->
