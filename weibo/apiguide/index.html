@@ -272,7 +272,7 @@
 				  Click the green <strong class="am-text-success">提交(Submit)</strong> button when you done.
 				  </p>
 				  <img class="am-radius am-img-thumbnail" src="../images/uri_set_2.png" width="100%"/>
-				 <P>Congratulation, you have finished this section.Now you become a Weibo API programmer since you have the  
+				 <P>Congratulations! You have finished this section.Now you become a Weibo API programmer since you have the  
 				 <strong class="am-text-danger">App Key</strong>, 
 				 <strong class="am-text-danger">App Secret</strong> and 
 				 <strong class="am-text-danger">Redirect URI</strong>.
@@ -291,7 +291,7 @@
 				 <h3 id="auth_code">Get an Authentication Code</h3>
 				 <p>To obtain an authentication code, we could use the 
 				 <a href="http://open.weibo.com/wiki/Oauth2/authorize" class="external-link" target="_blank">Authorization Service</a>.
-				 For your convenience, just fill the form below.
+				 For your convenience, just fill in the form below and leave the <strong>Response type</strong> as the default value.
 				 </p>
 				 <div class="container">
 					 <form class="am-form am-form-horizontal" action="https://api.weibo.com/oauth2/authorize" method="get" target="_blank">
@@ -325,7 +325,7 @@
 					</form>
 				</div>
 				
-				<p>After correctly fill in the information, a new page would be like this:</p>
+				<p>After correctly completing the information, a new page would be like this:</p>
 				<img class="am-radius am-img-thumbnail" src="../images/authorize_btn.png" width="100%"/>
 				<p>Click the red <strong class="am-text-danger">授权(Authorize)</strong> button,and you will be redirected to the URL you have set.
 				Copy the code in the URL to go to next step.</p>
@@ -334,7 +334,8 @@
 				<h3 id="access_token_done">Obtain the Access Token</h3>
 				 <p>To complete the final step, we could use the 
 				  <a href="http://open.weibo.com/wiki/OAuth2/access_token" class="external-link" target="_blank">Access Token Service</a>.
-				 For your convenience, just fill the form below.
+				 For your convenience, just fill in the form below. The <strong>Authentication Code</strong> comes from last step, and leave the 
+				 <strong>Grant Type</strong> as the default value.
 				 </p>
 				 
 				<div class="containerred">
@@ -388,10 +389,10 @@
 						</div>
 					</form>
 			  </div>
-			  <p>After correctly fill in the information, the service will return a JSON formate message in a new page.</p>
+			  <p>After correctly completing the information, the service will return a JSON formate message in a new page.</p>
 			  <code>{"access_token":"2.00biaj5GctqIhB2da047b0c47yeUcB","remind_in":"157679999","expires_in":157679999,"uid":"5862294965"}</code>
 			  <p>The Access Token above coule be <strong>2.00biaj5GctqIhB2da047b0c47yeUcB</strong>, it can last for a long time.</p>
-			  <p>Congratz! you have completed this section. If you are interested in the API demo, please follow the next section. </p>
+			  <p>Congratulations! You have completed this section. If you are interested in the API demo, please follow the next section. </p>
 			 <blockquote class="am-text-lg">
 				  NOTE: If you get some unexpected errors, please get a new <strong>Authentication Code</strong>. Try again!
 			</blockquote>
@@ -405,7 +406,7 @@
 			<a href="http://open.weibo.com/wiki/2/statuses/public_timeline"class="external-link" target="_blank">Public Timeline</a>:
 			Return the latest public weibos. 
 			</p> 
-			
+			<p>Give your <strong>App Key</strong> and <strong>Access Token</strong>, and click the Submit button.</p>
 			<div class="container">
 			   <form class="am-form am-form-horizontal" action="https://api.weibo.com/2/statuses/public_timeline.json" method="get" target="_blank">
 				<div class="am-form-group">
@@ -440,7 +441,7 @@
 				</form>
 			</div>
 			<hr/>
-			<P>Congratz! You have completed ALL of the guide. I hope it would be helpful! If you have any questions,
+			<P>Congratulations! You have completed ALL of the guide. I hope it would be helpful! If you have any questions,
 			please feel free to contact with <a href="http://library.gwu.edu/users/ychtan">Yecheng Tan</a>.</P>
 			<hr/>
 			<h2 id="reference">Reference <a href="#can-kao-lian-jie" title="Heading anchor" class="doc-anchor"></a></h2>
