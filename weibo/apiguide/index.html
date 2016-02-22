@@ -101,7 +101,10 @@
     <div class="amz-banner">
         <div class="amz-container" data-am-scrollspy="{animation: 'scale-up', repeat: false}">
             <h1 class="am-text-center">Guide for Using Weibo API</h1>
-             <p class="am-article-meta am-text-center am-text-lg"><strong>Yecheng Tan </strong><a href="https://github.com/Tanych/"><span class="am-icon-github-square"></span></a></p>
+             <p class="am-article-meta am-text-center am-text-lg">
+				 <strong>Yecheng Tan</strong>
+				 <a href="https://github.com/Tanych/"><span class="am-icon-github-square"></span></a>
+			 </p>
              <ul class="am-avg-sm-1">
                 <li class="am-text-center">
 				<a href="http://weibo.com/" target="_blank" >
@@ -110,11 +113,14 @@
 				
             </ul>
              <p>
-            This is a smooth guide for programmers and researchers who intend to use Weibo's API. Since the current official documents haven't updated for a long time,
-            I am writing this guide to support the <a href="social-feed-manager.readthedocs.org">Social Feed Manager</a> project. Also,I want to share what we know to the new users.
+            This is a smooth guide for programmers and researchers who intend to use Weibo's API.
+				 Since the current official documents haven't updated for a long time,
+            I am writing this guide to support the <a href="social-feed-manager.readthedocs.org">Social Feed Manager</a> project.
+				 Also,I want to share what we know to the new users.
             </p>
             <blockquote class="am-text-lg">I highly recommend you to ask someone with Chinese background if you feel stuck. 
-			Please make sure you can access to Weibo without any filters. If you are connetcting to <strong>GWireless</strong>, it would be hard to complete all the sections.
+			Please make sure you can access to Weibo without any filters. If you are connecting to <strong>GWireless</strong>,
+				it would be a little hard to complete all the sections.
 			</blockquote>
         </div>
     </div>
@@ -139,7 +145,7 @@
                                     <li><a href="#access_weibo_app">Access to open.weibo.com</a></li>
                                     <li><a href="#fill_in_basic">Fill the Basic Information</a></li>
                                     <li><a href="#confirm_info">Make a Confirmation</a></li>
-                                    <li><a href="#create_app ">Create a Web Application</a></li>
+                                    <li><a href="#create_app">Create a Web Application</a></li>
                                 </ul>
                             </li>
                             <li><a href="#get_access_token">Get Access Token</a>
@@ -153,7 +159,7 @@
                                
                             </li>
 							<li>
-							<a href="#reference ">Reference</a>
+							<a href="#reference">Reference</a>
 
                             </li>
 							
@@ -179,7 +185,8 @@
 				 This guide will follow the Mobile Phone way. The page is showing below:
 				 </p>
 				 <img class="am-radius am-img-thumbnail" src="../images/weibo_signup_mobile.png" width="100%"/>
-				 <p>Choose the area code for your phone number, after filling in all the fields,click the <strong class="am-text-warning">Orange</strong> button and go to the next step.</p>
+				 <p>Choose the area code for your phone number, after filling in all the fields,click the
+					 <strong class="am-text-warning">Orange</strong> button and go to the next step.</p>
 				 <h3 id="update_info">Update Information</h3>
 				  <p>In this step, you need to provide your <strong>basic information</strong>. 
 				  For the gender,<strong class="am-text-warning">男</strong> (on the left) means male and 
@@ -263,7 +270,7 @@
 				 <p>If successful, you will be redirected to the application manager page.
 				 Now, the <strong class="am-text-danger">App Key</strong> and <strong class="am-text-danger">App Secret</strong> will show on this page.
 				 To set a <strong class="am-text-danger">Redirect URI</strong>, just click the <strong>高级信息(Advanced Information)</strong> 
-				 in the submenu.</p>
+				 in the sub-menu.</p>
 				 <img class="am-radius am-img-thumbnail" src="../images/app_done.png" width="100%"/>
 				 <p>Then, locate a bar starting with the words <strong>OAuth2.0 接权设置(OAuth2.0 Authorization Setting)</strong>, and click the button <strong>编辑(Edit) </strong>on the right side of the bar.</p>
 				  <img class="am-radius am-img-thumbnail" src="../images/uri_set_1.png" width="100%"/>
@@ -319,7 +326,7 @@
 					<br>
 					<div class="am-form-group">
 						<div class="am-u-sm-10 am-u-sm-offset-2">
-							<button type="submit" class="am-btn am-btn-primary" value="Submit">Sumbit</button>
+							<button type="submit" class="am-btn am-btn-primary" value="Submit">Submit</button>
 						</div>
 					</div>
 					</form>
@@ -384,14 +391,14 @@
 
 					<div class="am-form-group">
 						<div class="am-u-sm-10 am-u-sm-offset-2">
-							<button type="submit" class="am-btn am-btn-warning" value="Submit">Sumbit</button>
+							<button type="submit" class="am-btn am-btn-warning" value="Submit">Submit</button>
 						</div>
 						</div>
 					</form>
 			  </div>
-			  <p>After correctly completing the information, the service will return a JSON formate message in a new page.</p>
+			  <p>After correctly completing the information, the service will return a JSON format message in a new page.</p>
 			  <code>{"access_token":"2.00biaj5GctqIhB2da047b0c47yeUcB","remind_in":"157679999","expires_in":157679999,"uid":"5862294965"}</code>
-			  <p>The Access Token above coule be <strong>2.00biaj5GctqIhB2da047b0c47yeUcB</strong>, it can last for a long time.</p>
+			  <p>The Access Token above would be <strong>2.00biaj5GctqIhB2da047b0c47yeUcB</strong>, it can last for a long time.</p>
 			  <p>Congratulations! You have completed this section. If you are interested in the API demo, please follow the next section. </p>
 			 <blockquote class="am-text-lg">
 				  NOTE: If you get some unexpected errors, please get a new <strong>Authentication Code</strong>. Try again!
@@ -403,8 +410,8 @@
 			<h2 id="api_demo">API Examples<a href="#" title="Heading anchor" class="doc-anchor"></a></h2>
 			<p>In this section, I wish you can understand the following examples.</p>
 			<p>
-			<a href="http://open.weibo.com/wiki/2/statuses/public_timeline"class="external-link" target="_blank">Public Timeline</a>:
-			Return the latest public weibos. 
+			<a href="http://open.weibo.com/wiki/2/statuses/public_timeline" class="external-link" target="_blank">Public Timeline</a>:
+			Return the latest public Weibos.
 			</p> 
 			<p>Give your <strong>App Key</strong> and <strong>Access Token</strong>, and click the Submit button.</p>
 			<div class="container">
@@ -435,7 +442,7 @@
 
 				<div class="am-form-group">
 					<div class="am-u-sm-10 am-u-sm-offset-2">
-						<button type="submit" class="am-btn am-btn-primary" value="Submit">Sumbit</button>
+						<button type="submit" class="am-btn am-btn-primary" value="Submit">Submit</button>
 					</div>
 					</div>
 				</form>
@@ -444,7 +451,7 @@
 			<P>Congratulations! You have completed ALL of the guide. I hope it would be helpful! If you have any questions,
 			please feel free to contact with <a href="http://library.gwu.edu/users/ychtan">Yecheng Tan</a>.</P>
 			<hr/>
-			<h2 id="reference">Reference <a href="#can-kao-lian-jie" title="Heading anchor" class="doc-anchor"></a></h2>
+			<h2 id="reference">Reference <a href="#reference" title="Heading anchor" class="doc-anchor"></a></h2>
 			
 			<ul>
 			<li><a href="https://www.cs.cmu.edu/~lingwang/weiboguide/">Practical Guide for using Sina Weibo's API</a></li>
@@ -456,7 +463,7 @@
     
     <footer class="my-footer">
        <p>© Copyright 2016 <a href="http://library.gwu.edu/" target="_blank">The George Washington University Libraries</a>.
-            Powered by <a herf="http://amazeui.org/">Amaze UI</a></p>
+            Powered by <a href="http://amazeui.org/">Amaze UI</a></p>
     </footer>
 
     <div class="amz-toolbar" id="amz-toolbar">
